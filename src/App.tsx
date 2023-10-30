@@ -38,7 +38,7 @@ function App() {
     <main>
         <section>
           <h1>Prueba técnica</h1>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} aria-label="Añadir elementos a la lista">
             <label htmlFor="itemName">Introduce el nombre</label>
             <input type="text" id='itemName' required placeholder='Introduce aquí el nombre'/>
             <button>Añade el objeto!</button>
@@ -47,17 +47,23 @@ function App() {
 
         <section className='items'>
           <h2>Lista de elementos</h2>
-          <ul className='items__list'>
-            {
-              items.map((item) => (
-                <li key={item.id}>
-                  <button onClick={() => deleteElement(item.id)}>
-                    { item.name }
-                  </button>
-                </li>
-              ))
-            }
-          </ul>
+          {
+            items.length === 0
+            ?
+            <strong>No hay elementos en la lista</strong>
+            :
+            <ul className='items__list'>
+              {
+                items.map((item) => (
+                  <li key={item.id}>
+                    <button onClick={() => deleteElement(item.id)}>
+                      { item.name }
+                    </button>
+                  </li>
+                ))
+              }
+            </ul>
+          }
         </section>
     </main>
   )

@@ -1,3 +1,5 @@
+Prueba técnica
+
 Crear una app en React que implemente un campo de texto y botón para añadir un elemento.
 
 Cuando se hace click en el botón, el texto en el campo de entrada debe agregarse a continuación en una lista de elementos.

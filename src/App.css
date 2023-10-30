@@ -8,6 +8,7 @@
 main {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
+  gap: 1.5rem;
 }
 
 form {
